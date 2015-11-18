@@ -1,0 +1,22 @@
+﻿TODO:
+
+## 1. Show welcome message.
+
+- <http://appjs.com/>
+
+## 2. Ask for PDF and edit:
+
+- <https://www.npmjs.com/package/pdf-fill-form>
+
+## 3. Ask for which drive to format.
+
+- From the CMD: <https://superuser.com/questions/274687/how-do-i-format-a-usb-drive-on-a-pc-that-was-formatted-on-a-mac>
+
+## 4. Format USB.
+
+- From the CMD: <https://superuser.com/questions/274687/how-do-i-format-a-usb-drive-on-a-pc-that-was-formatted-on-a-mac>
+- Format params: <https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/format.mspx?mfr=true>
+
+## 5. Set the USB as read only
+
+- <https://superuser.com/questions/354638/how-do-i-add-permissions-via-command-line-for-everyone-on-external-hdd>
