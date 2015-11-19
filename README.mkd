@@ -3,6 +3,9 @@
 ## 1. Show welcome message.
 
 - <http://appjs.com/>
+- AppJS is not working.
+- We could build it with GO and launch chrome without bars:
+  <https://superuser.com/questions/459775/how-can-i-launch-a-browser-with-no-window-frame-or-tabs-address-bar>
 
 ## 2. Ask for PDF and edit:
 
