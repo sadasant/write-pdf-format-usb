@@ -9,7 +9,8 @@
 
 ## 2. Ask for PDF and edit:
 
-- <https://www.npmjs.com/package/pdf-fill-form>
+- NodeJS: <https://www.npmjs.com/package/pdf-fill-form>
+- Pure JS way: <http://stackoverflow.com/a/25034254>
 
 ## 3. Ask for which drive to format.
 
