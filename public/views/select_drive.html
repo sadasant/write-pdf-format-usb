@@ -1,0 +1,40 @@
+<h1>PDF USB WRITER</h1>
+<h2>Select a USB</h2>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus
+elit justo, in egestas nibh laoreet id. Nulla rhoncus tempor sem
+placerat consequat. Mauris sagittis nulla ac lorem molestie vehicula.
+Sed a faucibus diam. Aliquam lectus tortor, ullamcorper sit amet orci
+vitae, ornare imperdiet diam.
+</p>
+<select id="USB" name="USB"></select>
+<br><br>
+<button view="index">Go back</button>
+<button view="select_drive">Continue</button>
+<script>
+(function(){
+	var $select = $("#USB");
+	$.get("/drives", function(data) {
+		var drives = data.split(",");
+		if (!drives.length) return;
+
+		var selected = localStorage["USB"];
+
+		for (var i = 0; i < drives.length; i++) {
+			var $option = $("<option>");
+			$option.text(drives[i]);
+			$option.val(drives[i]);
+			if (selected == drives[i]) {
+				$option.attr("selected", true);
+			}
+			$select.append($option);
+		}
+	});
+	$select.on("change", function() {
+		var selected = $select.val();
+		if (!selected) return;
+		alert("WARNING: This process will remove everything from: " + selected);
+		localStorage["USB"] = selected;
+	});
+})();
+</script>
