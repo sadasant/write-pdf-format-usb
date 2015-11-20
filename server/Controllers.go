@@ -7,8 +7,7 @@ import (
 )
 
 func ControllerDrives(w http.ResponseWriter, r *http.Request) {
-	println("DRIVERS!")
-	fmt.Fprintf(w, "DRIVERS!")
+	fmt.Fprintf(w, "A,B,C,D,E")
 }
 
 func ControllerKeepAlive(w http.ResponseWriter, r *http.Request) {
