@@ -26,8 +26,8 @@
     function loadView(name) {
         console.log("LOADING", name)
         $.ajax({
-            method: "GET",
-            url: "/views/"+name+".html",
+            method:  "GET",
+            url:     "/views/"+name+".html",
             success: function(data) {
                 $content.html(data);
             }
