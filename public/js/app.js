@@ -8,6 +8,8 @@
     //     }, 250)
     // }, 10*1000)
 
+    window.resizeTo(500, 500);
+
     // Keep alive
     setInterval(function() {
         $.ajax({
@@ -18,4 +20,27 @@
             }
         });
     }, 2000);
+
+    var $content = $("#content");
+
+    function loadView(name) {
+        console.log("LOADING", name)
+        $.ajax({
+            method: "GET",
+            url: "/views/"+name+".html",
+            success: function(data) {
+                $content.html(data);
+            }
+        })
+    }
+
+    loadView($content.attr("view"));
+    $content.attr("view", "");
+
+    $(window).on("click", function(e) {
+        var $target = $(e.target);
+        var view    = $target.attr("view");
+        console.log($target, view);
+        if (view) loadView(view);
+    });
 })();
