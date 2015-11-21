@@ -8,8 +8,6 @@
     //     }, 250)
     // }, 10*1000)
 
-    window.resizeTo(500, 500);
-
     // Keep alive
     setInterval(function() {
         $.ajax({
