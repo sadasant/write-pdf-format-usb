@@ -16,17 +16,23 @@ func Open(address string) {
 	address = fmt.Sprintf("http://%s?no-cache=true", address)
 
 	binary := "google-chrome"
+
+	var params []string
+
 	if runtime.GOOS == "windows" {
-		binary = "chrome.exe"
+		binary = "cmd"
+		params = append(params, "/C", "start", "chrome")
 	}
 
-	params := []string{
-		binary,
+	params = append(params, []string{
 		"-app=" + address,
 		"--window-size=300,400",
 		"--window-position=300,50",
 		"--disable-cache",
-	}
+	}...)
 
-	exec.Command("google-chrome", params...).CombinedOutput()
+	_, error := exec.Command(binary, params...).CombinedOutput()
+	if error != nil {
+		println("browser error:", error.Error())
+	}
 }
