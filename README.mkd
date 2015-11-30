@@ -11,10 +11,14 @@
 
 - NodeJS: <https://www.npmjs.com/package/pdf-fill-form>
 - Pure JS way: <http://stackoverflow.com/a/25034254>
+- We could script into adobe acrobat: https://forums.adobe.com/thread/799371?tstart=0
+  https://www.adobe.com/devnet/acrobat/javascript.html
+- Another nodejs package, I guess nodejs is cleaner for this: <https://github.com/phihag/pdfform.js>
 
 ## 3. Ask for which drive to format.
 
 - From the CMD: <https://superuser.com/questions/274687/how-do-i-format-a-usb-drive-on-a-pc-that-was-formatted-on-a-mac>
+- From the CMD: <http://en.code-bude.net/2013/02/23/show-all-drives-in-command-prompt>
 
 ## 4. Format USB.
 
