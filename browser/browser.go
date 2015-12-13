@@ -26,7 +26,7 @@ func Open(address string) {
 
 	params = append(params, []string{
 		"-app=" + address,
-		"--window-size=300,400",
+		"--window-size=600,500",
 		"--window-position=300,50",
 		"--disable-cache",
 	}...)

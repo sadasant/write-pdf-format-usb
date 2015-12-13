@@ -29,3 +29,31 @@ body {
     font-size:  14px;
     color:      #666;
 }
+
+form input {
+    background:    none;
+    border:        none;
+    border-bottom: 1px solid #333;
+}
+form input:active {
+    background: white;
+    border:     1px solid #999;
+}
+form .hidden {
+    display: none;
+}
+form .form-details {
+    margin-bottom: -5px;
+    color:         #48a;
+}
+form .form-details input {
+    border-bottom: 1px solid #48a;
+    width:         520px;
+}
+
+table {
+    border: none;
+}
+table td {
+    padding-right: 10px;
+}

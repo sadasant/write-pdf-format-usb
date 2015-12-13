@@ -4,43 +4,54 @@
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus
 elit justo, in egestas nibh laoreet id.
 </p>
-<br><br>
-<form action="">
+<form id="med-history-form" action="">
 
-	<b>Name:</b>
-	<input type="text" name="name"/>
-	<br><br>	
-
-	<b>Birth date:</b>
-	<input type="text" name="date" id="date"/>
-	<br><br>	
+	<table>
+		<tr>
+			<td>
+				<b>Name:</b>
+				<input type="text" name="name" style="width:350px;"/>
+			</td>
+			<td>
+				<b>Birth date:</b>
+				<input type="text" name="date" style="width:75px;" id="date"/>
+			</td>
+		</tr>
+	</table>
+	<br>
 
 	Are you under a physician's care now?
-	<select id="under_physician" name="under_physician">
+	<select id="under_physician" name="under_physician" show="#under_physician_details">
 		<option value="yes">Yes</option>
-		<option value="no">No</option>
+		<option value="no" selected>No</option>
 	</select>
-	If yes, please explain:
-	<input type="text">
-	<br><br>	
+	<div id="under_physician_details" class="hidden form-details">
+		Details:
+		<input type="text">
+	</div>
+	<br>
 
-	Have you ever been hispitalized or had a major operation?
-	<select id="under_physician" name="under_physician">
+	Have you ever been hospitalized or had a major operation?
+	<select id="hospitalized" name="hospitalized" show="#hospitalized_details">
 		<option value="yes">Yes</option>
-		<option value="no">No</option>
+		<option value="no" selected>No</option>
 	</select>
-	If yes, please explain:
-	<input type="text">
-	<br><br>
+	<div id="hospitalized_details" class="hidden form-details">
+		Details:
+		<input type="text">
+	</div>
+	<br>
 
 	Are you taking any medication, pills or drugs?
-	<select id="under_physician" name="under_physician">
+	<select id="medication" name="medication" show="#medication_details">
 		<option value="yes">Yes</option>
-		<option value="no">No</option>
+		<option value="no" selected>No</option>
 	</select>
-	If yes, please explain:
-	<input type="text">
-	<br><br>
+	<div id="medication_details" class="hidden form-details">
+		Details:
+		<input type="text">
+	</div>
+	<br>
 
 	<button id="save">Save</button>
 </form>
@@ -59,6 +70,15 @@ elit justo, in egestas nibh laoreet id.
 			}
 		});
 	});
+
+(function(){
+	$("#med-history-form select").on("change", function(e){
+		var $this = $(this);
+		var show  = $this.attr("show");
+		console.log("Select changed", show);
+		if (show) $(show).fadeIn();
+	});
+})();
 </script>
 <button view="select_drive">Go back</button>
 <button view="format_usb">Continue</button>
