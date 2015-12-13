@@ -1,0 +1,27 @@
+<h1>FORMAT THE USB</h1>
+<h2>Do you want to format <div id="usb_drive_id"></div>?</h2>
+<br><br>
+<form action="">
+
+	<select id="are_you_sure" name="are_you_sure">
+		<option value="yes">Yes</option>
+		<option value="no">No</option>
+	</select>
+	<br><br>
+
+	<button id="format_usb">Format the USB</button>
+</form>
+<script>
+	$("#usb_drive_id").text(localStorage["USB"]);
+	$("#format_usb").click(function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		var usb = localStorage["USB"];
+		if (!confirm("Are you sure you want to format " + usb + "?")) return;
+		$.post("/format", { usb: usb }, function(result){
+			console.log("RESULT:", result);
+		});
+	});
+</script>
+<button view="form_1">Go back</button>
+<button view="write_usb">Continue</button>

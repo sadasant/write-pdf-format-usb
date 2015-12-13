@@ -10,10 +10,11 @@ vitae, ornare imperdiet diam.
 <select id="USB" name="USB"></select>
 <br><br>
 <button view="index">Go back</button>
-<button view="load_pdf">Continue</button>
+<button view="form_1">Continue</button>
 <script>
 (function(){
 	var $select = $("#USB");
+
 	$.get("/drives", function(data) {
 		var drives = data.split(",");
 		if (!drives.length) return;
@@ -24,12 +25,17 @@ vitae, ornare imperdiet diam.
 			var $option = $("<option>");
 			$option.text(drives[i]);
 			$option.val(drives[i]);
-			if (selected == drives[i]) {
+
+			if ((!selected && i === 0)
+			||  (selected == drives[i])) {
 				$option.attr("selected", true);
+				localStorage["USB"] = drives[i];
 			}
+
 			$select.append($option);
 		}
 	});
+
 	$select.on("change", function() {
 		var selected = $select.val();
 		if (!selected) return;

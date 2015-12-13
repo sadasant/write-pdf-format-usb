@@ -9,15 +9,16 @@
     // }, 10*1000)
 
     // Keep alive
-    setInterval(function() {
+    var alive_interval = setInterval(function() {
         $.ajax({
             method: "GET",
             url: "/keep-alive",
             error: function() {
+                clearInterval(alive_interval);
                 window.close();
             }
         });
-    }, 2000);
+    }, 1000);
 
     var $content = $("#content");
 

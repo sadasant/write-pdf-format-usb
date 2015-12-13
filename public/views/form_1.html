@@ -1,0 +1,64 @@
+<h1>MEDICAL HISTORY</h1>
+<h2>Please fill the following form</h2>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus
+elit justo, in egestas nibh laoreet id.
+</p>
+<br><br>
+<form action="">
+
+	<b>Name:</b>
+	<input type="text" name="name"/>
+	<br><br>	
+
+	<b>Birth date:</b>
+	<input type="text" name="date" id="date"/>
+	<br><br>	
+
+	Are you under a physician's care now?
+	<select id="under_physician" name="under_physician">
+		<option value="yes">Yes</option>
+		<option value="no">No</option>
+	</select>
+	If yes, please explain:
+	<input type="text">
+	<br><br>	
+
+	Have you ever been hispitalized or had a major operation?
+	<select id="under_physician" name="under_physician">
+		<option value="yes">Yes</option>
+		<option value="no">No</option>
+	</select>
+	If yes, please explain:
+	<input type="text">
+	<br><br>
+
+	Are you taking any medication, pills or drugs?
+	<select id="under_physician" name="under_physician">
+		<option value="yes">Yes</option>
+		<option value="no">No</option>
+	</select>
+	If yes, please explain:
+	<input type="text">
+	<br><br>
+
+	<button id="save">Save</button>
+</form>
+<script>
+	$("#date").datepicker();
+	$("#save").click(function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		alert("you clicked");
+		html2canvas(document.body, {
+			onrendered: function(canvas) {
+				console.log("canvas:", canvas);
+				var cxt = canvas.getContext("2d");
+				var url = window.canvas_data_URL = canvas.toDataURL();
+				alert("Result: " + url);
+			}
+		});
+	});
+</script>
+<button view="select_drive">Go back</button>
+<button view="format_usb">Continue</button>

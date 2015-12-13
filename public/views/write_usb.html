@@ -1,0 +1,33 @@
+<h1>WRITE THE USB</h1>
+<h2>Do you want to write the usb <div id="usb_drive_id"></div>?</h2>
+<br><br>
+<form action="">
+
+	<select id="are_you_sure" name="are_you_sure">
+		<option value="yes">Yes</option>
+		<option value="no">No</option>
+	</select>
+	<br><br>
+
+	<button id="write_usb">Write the USB</button>
+</form>
+<script>
+	$("#usb_drive_id").text(localStorage["USB"]);
+	$("#write_usb").click(function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		var usb = localStorage["USB"];
+		if (!window.canvas_data_URL) {
+			alert("Please go back and click save on the medical form.");
+			return;
+		}
+		if (!confirm("Are you sure you want to write in " + usb + "?")) return;
+		$.post("/write", {
+			usb:  usb,
+			data: window.canvas_data_URL
+		}, function(result){
+			console.log("RESULT:", result);
+		});
+	});
+</script>
+<button view="format_usb">Go back</button>

@@ -21,11 +21,11 @@ func init() {
 
 func Start() {
 	http.Handle("/", http.FileServer(StatikFS))
-	http.HandleFunc("/drives", ControllerDrives)
-	// http.HandleFunc("/pdf", ControllerPDF)
-	// http.HandleFunc("/format", ControllerFormat)
 	http.HandleFunc("/keep-alive", ControllerKeepAlive)
 	http.HandleFunc("/exit", ControllerExit)
+	http.HandleFunc("/drives", ControllerDrives)
+	http.HandleFunc("/format", ControllerFormat)
+	http.HandleFunc("/write", ControllerWrite)
 
 	// Killing all if we're not alive
 	go checkAlive()
