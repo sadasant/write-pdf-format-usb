@@ -1,8 +1,8 @@
+/* General */
 body {
     background: #f1f1f1;
     color:      #333;
 }
-
 #content {
     wdith:            400px;
     background-color: rgba(255,255,255,.4);
@@ -12,48 +12,113 @@ body {
     font-family:      sans-serif;
     box-shadow:       2px 2px 10px rgba(0,0,0,.1);
 }
+.hidden {
+    display: none !important;
+}
+.float-right {
+    float: right;
+}
 
+/* Bottom controls */
+.bottom-controls {
+    margin-top: 20px;
+    height: 20px;
+}
+.bottom-controls button {
+    float:       right;
+    margin-left: 2px;
+}
+.bottom-controls button:first-child {
+    float:  left;
+    margin: 0px;
+}
+.bottom-controls .important {
+    background:    #ff7;
+    border:        1px solid #aa7;
+    border-radius: 1px;
+    padding:       2px 7px 2px;
+    box-shadow:    inset 0px -7px 6px rgba(0,0,0,.05), inset 0px 2px 2px rgba(255,255,255,.5);
+    color:         #330;
+    text-shadow:   0px 1px rgba(255,255,255,.5);
+}
+.bottom-controls .important:hover {
+    background:  #ff0;
+    border:      1px solid #aa0;
+    box-shadow:  inset 0px -7px 6px rgba(0,0,0,.05), inset 0px 2px 2px rgba(255,255,255,1);
+    color:       #000;
+    text-shadow: 0px 1px rgba(255,255,255,1);
+    cursor:      pointer;
+}
+.bottom-controls .important:active {
+    background:  #ff7;
+    border:      1px solid #aa7;
+    padding:     3px 7px 1px;
+    box-shadow:  inset 0px -14px 6px rgba(0,0,0,.08);
+    color:       #000;
+    text-shadow: none;
+}
+
+/* H* */
 #content h1 {
     font-size: 22px;
 }
-
 #content h2 {
     font-size: 18px;
 }
 
+/* p */
 #content p {
 }
-
 #content p {
     text-align: justify;
     font-size:  14px;
     color:      #666;
 }
+#content p.note {
+    background:    #ffd;
+    border:        1px solid #eea;
+    padding:       10px;
+    border-radius: 2px;
+}
+#content div.line {
+    display:       block;
+    margin-bottom: 5px;
+}
 
-form input {
+/* Form */
+input {
     background:    none;
     border:        none;
     border-bottom: 1px solid #333;
 }
-form input:active {
-    background: white;
-    border:     1px solid #999;
+input:active,input:hover {
+    background:    white;
+    border:        1px solid #999;
+    border-radius: 2px 2px 0 0;
 }
-form .hidden {
-    display: none;
-}
-form .form-details {
+.form-details {
+    display:       inline-block;
+    margin-top:    4px;
     margin-bottom: -5px;
     color:         #48a;
 }
-form .form-details input {
+.form-details input {
     border-bottom: 1px solid #48a;
-    width:         520px;
+    width:         534px;
+    color:         #046;
+}
+.block {
+    border:        1px solid #666;
+    padding:       10px;
+    margin-bottom: 10px;
 }
 
+/* Table */
 table {
-    border: none;
+    border:        none;
+    margin-left:   -3px;
+    margin-bottom: 10px;
 }
 table td {
-    padding-right: 10px;
+    padding-right: 5px;
 }

@@ -1,60 +1,77 @@
 <h1>MEDICAL HISTORY</h1>
-<h2>Please fill the following form</h2>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus
-elit justo, in egestas nibh laoreet id.
+<p class="note hide-before-save">
+Please fill the following form.
 </p>
-<form id="med-history-form" action="">
 
-	<table>
-		<tr>
-			<td>
-				<b>Name:</b>
-				<input type="text" name="name" style="width:350px;"/>
-			</td>
-			<td>
-				<b>Birth date:</b>
-				<input type="text" name="date" style="width:75px;" id="date"/>
-			</td>
-		</tr>
-	</table>
+<table style="width:615px">
+	<tr>
+		<td>
+			<b>Name:</b>
+			<input type="text" name="name" style="width:291px;margin-right:-20px;"/>
+		</td>
+		<td>
+			<b>Sex:</b>
+			<select id="sex" name="sex" show="#sex_questions">
+				<option value="M">M</option>
+				<option value="F">F</option>
+			</select>
+		</td>
+		<td>
+			<b>Birth date:</b>
+			<input type="text" name="date" style="width:66px;" id="date"/>
+		</td>
+	</tr>
+</table>
+
+<div id="sex_questions-F" class="hidden block">
+	<input type="checkbox"/> Pregnant/Trying to get pregnant?
+	<input type="checkbox"/> Nursing?
 	<br>
+	<input type="checkbox"/> Taking oral contraceptives?
+</div>
 
+<div class="line">
 	Are you under a physician's care now?
-	<select id="under_physician" name="under_physician" show="#under_physician_details">
+	<select id="under_physician" name="under_physician" show="#under_physician_details" class="float-right">
 		<option value="yes">Yes</option>
 		<option value="no" selected>No</option>
 	</select>
-	<div id="under_physician_details" class="hidden form-details">
+	<div id="under_physician_details-yes" class="hidden form-details">
 		Details:
 		<input type="text">
 	</div>
-	<br>
+</div>
 
+<div class="line">
 	Have you ever been hospitalized or had a major operation?
-	<select id="hospitalized" name="hospitalized" show="#hospitalized_details">
+	<select id="hospitalized" name="hospitalized" show="#hospitalized_details" class="float-right">
 		<option value="yes">Yes</option>
 		<option value="no" selected>No</option>
 	</select>
-	<div id="hospitalized_details" class="hidden form-details">
+	<div id="hospitalized_details-yes" class="hidden form-details">
 		Details:
 		<input type="text">
 	</div>
-	<br>
+</div>
 
+<div class="line">
 	Are you taking any medication, pills or drugs?
-	<select id="medication" name="medication" show="#medication_details">
+	<select id="medication" name="medication" show="#medication_details" class="float-right">
 		<option value="yes">Yes</option>
 		<option value="no" selected>No</option>
 	</select>
-	<div id="medication_details" class="hidden form-details">
+	<div id="medication_details-yes" class="hidden form-details">
 		Details:
 		<input type="text">
 	</div>
-	<br>
+</div>
 
-	<button id="save">Save</button>
-</form>
+<div class="bottom-controls">
+	<button view="index">Go back</button>
+	<button view="select_drive">Continue</button>
+	<button id="save" class="important">Save</button>
+</div>
+
 <script>
 	$("#date").datepicker();
 	$("#save").click(function(e) {
@@ -70,15 +87,4 @@ elit justo, in egestas nibh laoreet id.
 			}
 		});
 	});
-
-(function(){
-	$("#med-history-form select").on("change", function(e){
-		var $this = $(this);
-		var show  = $this.attr("show");
-		console.log("Select changed", show);
-		if (show) $(show).fadeIn();
-	});
-})();
 </script>
-<button view="select_drive">Go back</button>
-<button view="format_usb">Continue</button>
